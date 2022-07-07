@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/now_playing.dart';
+import 'package:music_player/select_genre.dart';
 import 'package:music_player/splashscreen.dart';
+import 'package:music_player/select_genre.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
@@ -12,10 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'B3atz',
-      home: SplashScreenPage(),
+      home: Favourite(),
     );
   }
 }
