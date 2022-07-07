@@ -9,4 +9,5 @@ class AppColor {
   static const mintgreen = Color(0xFF5EADAD);
   static const lightsgreen = Color(0xFF9CDBDB);
   static const darkgreen = Color(0xFF275151);
+  static const mintsgreen = Color(0xFF3AE8E8);
 }
