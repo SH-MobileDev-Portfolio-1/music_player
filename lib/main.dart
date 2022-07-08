@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/profile/create_playlist.dart';
 import 'package:music_player/profile/profile_page.dart';
 import 'package:music_player/search/categories_search.dart';
 import 'package:music_player/profile/edit_profile.dart';
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, title: 'B3atz', home: ProfilePage());
+        debugShowCheckedModeBanner: false,
+        title: 'B3atz',
+        home: CreatePlaylist());
   }
 }

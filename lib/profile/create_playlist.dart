@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:music_player/constants/size.dart';
 
-import '../widgets/profile_tile.dart';
-
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class CreatePlaylist extends StatefulWidget {
+  const CreatePlaylist({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<CreatePlaylist> createState() => _CreatePlaylistState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _CreatePlaylistState extends State<CreatePlaylist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         icon: const Icon(Icons.arrow_back),
                         onPressed: () {},
                       ),
-                    ),
-                    Padding(
+                    ),Padding(
                       padding: const EdgeInsets.only(left: kmediumspace * 5),
                       child: SvgPicture.asset(
                         "assets/icons/edit.svg",
@@ -131,143 +126,103 @@ class _ProfilePageState extends State<ProfilePage> {
 
           ),
         ),
-        SizedBox(
-          height: kmediumspace
-        ),
+
+
         Card(color: AppColor.burntgreen,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kmediumspace - 5),
+            padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace + kspace),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Playlist(15)",
-                      style: GoogleFonts.ubuntu(
-                          color: AppColor.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      "View All",
-                      style: GoogleFonts.ubuntu(
-                        color: AppColor.white,
-                        fontSize: 13,
-                      ),
-                    )
-                  ],
+                Text(
+                  "Playlist(0)",
+                  style: GoogleFonts.ubuntu(
+                      color: AppColor.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700),
                 ),
-                SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: const [
-                        ProfileTile(
-                            image: "assets/images/all.png",
-                            name: "B3atz all in one mix"),
-                        ProfileTile(
-                            image: "assets/images/tall.png", name: "Best of Burnaboy"),
-                        ProfileTile(
-                            image: "assets/images/wizkid.png", name: "Best of Wizkid"),
-                      ],
-                    )),
-                SizedBox(
-                  height: kmediumspace + kspace,
+                const SizedBox(
+                  height: kmediumspace * 2,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Following(54)",
-                      style: GoogleFonts.ubuntu(
-                        color: AppColor.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 17,
-                      ),
-                    ),
-                    Text(
-                      "View All",
-                      style: GoogleFonts.ubuntu(
-                        color: AppColor.white,
-                        fontSize: 13,
-                      ),
-                    )
-                  ],
-                ),
-                SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: const [
-                        ProfileTile(
-                            image: "assets/images/artiste3.png", name: "Burna Boy"),
-                        ProfileTile(
-                            image: "assets/images/psquare.png", name: "Rudeboy"),
-                        ProfileTile(
-                            image: "assets/images/rihanna.png", name: "Nicki Minaj"),
-                        ProfileTile(image: "assets/images/simi.png", name: "Simi"),
-                      ],
-                    )),
-                SizedBox(height: kspace),
                 Center(
-                    child: Text(
-                      "Follow More",
-                      style: GoogleFonts.ubuntu(
-                        color: AppColor.white,fontWeight: FontWeight.bold,
+                  child: Text(
+                    "Create New Playlist",
+                    style: GoogleFonts.ubuntu(
+                        color: AppColor.white,
                         fontSize: 17,
-                      ),
-                    )), SizedBox(height: kspace),
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),const SizedBox(
+                    height: kmediumspace
+                ),
               ],
             ),
           ),
         ),
-
-
-        SizedBox(height: kspace),
+        Card(
+          color: AppColor.burntgreen,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Following(0)",
+                  style: GoogleFonts.ubuntu(
+                    color: AppColor.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(
+                  height: kmediumspace * 2,
+                ),
+                Center(
+                  child: Text(
+                    "Follow Your Friends",
+                    style: GoogleFonts.ubuntu(
+                        color: AppColor.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),
+                const SizedBox(
+                  height: kmediumspace * 2,
+                )
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: kspace),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kmediumspace -5 ),
+          padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Followers(12)",
-                    style: GoogleFonts.ubuntu(
+              Text(
+                "Followers(0)",
+                style: GoogleFonts.ubuntu(
+                  color: AppColor.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 17,
+                ),
+              ),
+              const SizedBox(
+                height: kmediumspace * 2,
+              ),
+              Center(
+                child: Text(
+                  "Share your Links to friends",
+                  style: GoogleFonts.ubuntu(
                       color: AppColor.white,
-                      fontWeight: FontWeight.w700,
                       fontSize: 17,
-                    ),
-                  ),
-                  Text(
-                    "View All",
-                    style: GoogleFonts.ubuntu(
-                      color: AppColor.white,
-                      fontSize: 13,
-                    ),
-                  ),
-                ],
-              ),SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: const [
-                      ProfileTile(
-                        image: "assets/images/ada.png",
-                      ),
-                      ProfileTile(
-                        image: "assets/images/gospel.png",
-                      ),
-                      ProfileTile(
-                          image: "assets/images/man.png"),
-                      ProfileTile(
-                          image: "assets/images/hajia.png"),
-                    ],
-                  ))
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
             ],
           ),
         ),
-
       ]),
     );
   }
 }
-
