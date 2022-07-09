@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'B3atz',
-        home: CreatePlaylist());
+        home: EditProfile());
   }
 }
