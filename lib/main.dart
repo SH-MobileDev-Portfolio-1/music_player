@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/search/categories_search.dart';
+import 'package:music_player/profile/edit_profile.dart';
+import 'package:music_player/search/recent_search.dart';
+import 'package:music_player/settings.dart';
 import 'package:music_player/now_playing.dart';
 import 'package:music_player/select_genre.dart';
 import 'package:music_player/splashscreen.dart';
@@ -15,10 +19,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'B3atz',
-      home: Favourite(),
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'B3atz',
+        home: CategoriesSearch());
   }
 }
