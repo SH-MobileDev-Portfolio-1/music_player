@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
@@ -19,3 +18,8 @@ class AppColor {
   static const lightsgreen = Color(0xFF9CDBDB);
   static const darkgreen = Color(0xFF275151);
 }
+
+// musti's colours
+const darkGreenArrow = Color(0xFF275151);
+const lightGreenContainer = Color(0xFF3AE8E8);
+const imageHighlight = Color.fromARGB(255, 6, 94, 99);
