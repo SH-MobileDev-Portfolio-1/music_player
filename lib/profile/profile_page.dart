@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
@@ -131,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: kmediumspace
         ),
         Card(color: AppColor.burntgreen,
@@ -171,7 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             image: "assets/images/wizkid.png", name: "Best of Wizkid"),
                       ],
                     )),
-                SizedBox(
+                const SizedBox(
                   height: kmediumspace + kspace,
                 ),
                 Row(
@@ -207,7 +205,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ProfileTile(image: "assets/images/simi.png", name: "Simi"),
                       ],
                     )),
-                SizedBox(height: kspace),
+                const SizedBox(height: kspace),
                 Center(
                     child: Text(
                       "Follow More",
@@ -215,14 +213,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: AppColor.white,fontWeight: FontWeight.bold,
                         fontSize: 17,
                       ),
-                    )), SizedBox(height: kspace),
+                    )), const SizedBox(height: kspace),
               ],
             ),
           ),
         ),
 
 
-        SizedBox(height: kspace),
+        const SizedBox(height: kspace),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kmediumspace -5 ),
           child: Column(

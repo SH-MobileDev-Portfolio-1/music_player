@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
@@ -123,7 +121,7 @@ class _EditProfileState extends State<EditProfile> {
 
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: kmediumspace,
         ),
         Padding(
@@ -140,18 +138,18 @@ class _EditProfileState extends State<EditProfile> {
             TextFormField(
               decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
+                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
                   hintText: "Muiz",
                   hintStyle: GoogleFonts.ubuntu(
                     color: AppColor.white,
                     fontSize: 15,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColor.white),
+                    borderSide: const BorderSide(color: AppColor.white),
                     borderRadius: BorderRadius.circular(ksmallspace),
                   )),
             ),
-            SizedBox(
+            const SizedBox(
               height: kmediumspace,
             ),
             Text(
@@ -164,18 +162,18 @@ class _EditProfileState extends State<EditProfile> {
             TextFormField(
               decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
+                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
                   hintText: "Male",
                   hintStyle: GoogleFonts.ubuntu(
                     color: AppColor.white,
                     fontSize: 15,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColor.white),
+                    borderSide: const BorderSide(color: AppColor.white),
                     borderRadius: BorderRadius.circular(ksmallspace),
                   )),
             ),
-            SizedBox(
+            const SizedBox(
               height: kmediumspace,
             ),
             Text(
@@ -188,18 +186,18 @@ class _EditProfileState extends State<EditProfile> {
             TextFormField(
               decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
+                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
                   hintText: "Muiz@gmail.com",
                   hintStyle: GoogleFonts.ubuntu(
                     color: AppColor.white,
                     fontSize: 15,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColor.white),
+                    borderSide: const BorderSide(color: AppColor.white),
                     borderRadius: BorderRadius.circular(ksmallspace),
                   )),
             ),
-            SizedBox(
+            const SizedBox(
               height: kmediumspace,
             ),
             Text(
@@ -213,7 +211,7 @@ class _EditProfileState extends State<EditProfile> {
               maxLines: 4,
               decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
+                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
                   hintText:
                   "I am Muiz, a music lover and i have passion for new artists",
                   hintStyle: GoogleFonts.ubuntu(
@@ -221,12 +219,12 @@ class _EditProfileState extends State<EditProfile> {
                     fontSize: 15,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColor.white),
+                    borderSide: const BorderSide(color: AppColor.white),
                     borderRadius: BorderRadius.circular(ksmallspace),
                   )),
-            ),SizedBox(height: kmediumspace *2),
+            ),const SizedBox(height: kmediumspace *2),
             Center(
-              child: Container(
+              child: SizedBox(
                 width: 150,
                 child: TextButton(
                   style: ButtonStyle(
@@ -240,7 +238,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                   ),
                   onPressed: (){},
-                  child: Text('Save', style: TextStyle(color: Colors.white)),
+                  child: const Text('Save', style: TextStyle(color: Colors.white)),
                 ),
               ),
             ),

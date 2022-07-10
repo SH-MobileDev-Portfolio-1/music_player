@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/size.dart';
 import 'package:music_player/widgets/search_tile.dart';
-
-import '../constants/colours.dart';
 import '../constants/colours.dart';
 
 class RecentSearch extends StatefulWidget {
