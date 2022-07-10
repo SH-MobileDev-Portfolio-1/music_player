@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/profile/edit_profile.dart';
 
-
 Future<void> main() async {
   runApp(const MyApp());
 }
