@@ -1,11 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-
-
-const mainBackgroundColor =  Color(0xff1c7068);
-const circleColor = Color(0xff3a6464);
-const backButtonColor = Color(0xff3cecf0);
+const MainBackgroundColor = const Color(0xff1c7068);
+const CircleColor = const Color(0xff3a6464);
+const BackButtonColor = const Color(0xff3cecf0);
+const SignUpColor = const Color(0xff245c6c);
+const SignInColor = const Color(0xff285c64);
+const HighlightColor = const Color(0xff649ca0);
 
 class AppColor {
   AppColor._();
@@ -18,3 +19,8 @@ class AppColor {
   static const darkgreen = Color(0xFF275151);
   static const mintsgreen = Color(0xFF3AE8E8);
 }
+
+// musti's colours
+const darkGreenArrow = Color(0xFF275151);
+const lightGreenContainer = Color(0xFF3AE8E8);
+const imageHighlight = Color.fromARGB(255, 6, 94, 99);

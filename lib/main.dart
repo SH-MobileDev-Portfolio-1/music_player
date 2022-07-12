@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'B3atz',
-        home: EditProfile());
+        home: SplashScreenPage());
   }
 }
