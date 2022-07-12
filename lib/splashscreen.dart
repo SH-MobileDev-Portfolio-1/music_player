@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/constants/widget.dart';
 import 'authentication/onboarding.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -21,15 +22,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-                "https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        decoration: getDecoration(),
         child: Center(
           child: GestureDetector(
             onTap: () => Navigator.of(context).pushReplacement(
