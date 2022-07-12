@@ -23,7 +23,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
 
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
   }
 
@@ -32,7 +32,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
-
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       /*appBar: AppBar(
@@ -51,22 +51,22 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           ),
         ),
       ),*/
-      backgroundColor: MainBackgroundColor,
+      backgroundColor: mainBackgroundColor,
       body: Center(
         child: Column(children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: [
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               CircleAvatar(
-                backgroundColor: BackButtonColor,
+                backgroundColor: backButtonColor,
                 radius: 20,
                 child: IconButton(
                   splashRadius: 5,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   color: Colors.black,
-                  icon: Icon(Icons.arrow_back_sharp),
+                  icon: const Icon(Icons.arrow_back_sharp),
                   onPressed: () {},
                 ),
               ),
@@ -74,7 +74,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           ),
           CircleAvatar(
             radius: 100,
-            backgroundColor: CircleColor,
+            backgroundColor: circleColor,
             child: ClipOval(
                 child: Image.asset(
               'Sarada.png',
@@ -83,8 +83,8 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
               fit: BoxFit.cover,
             )),
           ),
-          SizedBox(height: 15),
-          Text(
+          const SizedBox(height: 15),
+          const Text(
             "Stand Strong",
             style: TextStyle(
               color: Colors.white,
@@ -93,36 +93,36 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 10),
-          Text(
+          const SizedBox(height: 10),
+          const Text(
             "Davido Ft. Sunday Service Choir",
-            style: TextStyle(
+            style:  TextStyle(
               color: Colors.white70,
               fontSize: 15,
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w100,
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(CupertinoIcons.heart),
+                icon: const Icon(CupertinoIcons.heart),
                 color: Colors.white,
                 onPressed: () {},
               ),
-              SizedBox(width: 50),
-              Icon(Icons.repeat, color: Colors.white),
-              SizedBox(width: 50),
-              Icon(Icons.shuffle, color: Colors.white)
+              const SizedBox(width: 50),
+              const Icon(Icons.repeat, color: Colors.white),
+              const SizedBox(width: 50),
+              const Icon(Icons.shuffle, color: Colors.white)
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(width: 5),
-              Text(
+            children: const [
+                SizedBox(width: 5),
+                Text(
                 'Favourites',
                 style: TextStyle(
                   fontSize: 10,
@@ -151,9 +151,9 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
               SizedBox(width: 5)
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           SliderTheme(
-              data: SliderThemeData(
+              data: const SliderThemeData(
                   thumbColor: Colors.lightBlueAccent,
                   thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7)),
               child: Slider(
@@ -169,7 +169,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
               children: [
                 Text(
                   formatTime(position),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
                     color: Colors.white70,
                     fontWeight: FontWeight.w100,
@@ -177,7 +177,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
                 ),
                 Text(
                   formatTime(duration - position),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
                     color: Colors.white70,
                     fontWeight: FontWeight.w100,
@@ -191,7 +191,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.fast_rewind_sharp),
+                icon: const Icon(Icons.fast_rewind_sharp),
                 iconSize: 70,
                 color: Colors.white,
               ),
@@ -208,7 +208,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.fast_forward_sharp),
+                icon: const Icon(Icons.fast_forward_sharp),
                 iconSize: 70,
                 color: Colors.white,
               ),

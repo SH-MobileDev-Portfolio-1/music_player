@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:music_player/constants/size.dart';
 
-class EditProfile extends StatefulWidget {
-  const EditProfile({Key? key}) : super(key: key);
+class CreatePlaylist extends StatefulWidget {
+  const CreatePlaylist({Key? key}) : super(key: key);
 
   @override
-  State<EditProfile> createState() => _EditProfileState();
+  State<CreatePlaylist> createState() => _CreatePlaylistState();
 }
 
-class _EditProfileState extends State<EditProfile> {
+class _CreatePlaylistState extends State<CreatePlaylist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +34,11 @@ class _EditProfileState extends State<EditProfile> {
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back),
                         onPressed: () {},
+                      ),
+                    ),Padding(
+                      padding: const EdgeInsets.only(left: kmediumspace * 5),
+                      child: SvgPicture.asset(
+                        "assets/icons/edit.svg",
                       ),
                     ),
                     SvgPicture.asset(
@@ -121,131 +126,102 @@ class _EditProfileState extends State<EditProfile> {
 
           ),
         ),
-        const SizedBox(
-          height: kmediumspace,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kmediumspace - 5,vertical: kmediumspace),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Text(
-              "Name:",
-              style: GoogleFonts.ubuntu(
-                  color: AppColor.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                  contentPadding:
-                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
-                  hintText: "Muiz",
-                  hintStyle: GoogleFonts.ubuntu(
-                    color: AppColor.white,
-                    fontSize: 15,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: AppColor.white),
-                    borderRadius: BorderRadius.circular(ksmallspace),
-                  )),
-            ),
-            const SizedBox(
-              height: kmediumspace,
-            ),
-            Text(
-              "Gender:",
-              style: GoogleFonts.ubuntu(
-                  color: AppColor.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                  contentPadding:
-                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
-                  hintText: "Male",
-                  hintStyle: GoogleFonts.ubuntu(
-                    color: AppColor.white,
-                    fontSize: 15,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: AppColor.white),
-                    borderRadius: BorderRadius.circular(ksmallspace),
-                  )),
-            ),
-            const SizedBox(
-              height: kmediumspace,
-            ),
-            Text(
-              " Email:",
-              style: GoogleFonts.ubuntu(
-                  color: AppColor.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                  contentPadding:
-                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
-                  hintText: "Muiz@gmail.com",
-                  hintStyle: GoogleFonts.ubuntu(
-                    color: AppColor.white,
-                    fontSize: 15,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: AppColor.white),
-                    borderRadius: BorderRadius.circular(ksmallspace),
-                  )),
-            ),
-            const SizedBox(
-              height: kmediumspace,
-            ),
-            Text(
-              "Bio:",
-              style: GoogleFonts.ubuntu(
-                  color: AppColor.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600),
-            ),
-            TextFormField(
-              maxLines: 4,
-              decoration: InputDecoration(
-                  contentPadding:
-                  const EdgeInsets.symmetric(horizontal: kspace, vertical: kspace),
-                  hintText:
-                  "I am Muiz, a music lover and i have passion for new artists",
-                  hintStyle: GoogleFonts.ubuntu(
-                    color: AppColor.white,
-                    fontSize: 15,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: AppColor.white),
-                    borderRadius: BorderRadius.circular(ksmallspace),
-                  )),
-            ),const SizedBox(height: kmediumspace *2),
-            Center(
-              child: SizedBox(
-                width: 150,
-                child: TextButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(AppColor.mintsgreen),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
 
-                      ),
-                    ),
+
+        Card(color: AppColor.burntgreen,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace + kspace),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Playlist(0)",
+                  style: GoogleFonts.ubuntu(
+                      color: AppColor.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(
+                  height: kmediumspace * 2,
+                ),
+                Center(
+                  child: Text(
+                    "Create New Playlist",
+                    style: GoogleFonts.ubuntu(
+                        color: AppColor.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700),
                   ),
-                  onPressed: (){},
-                  child: const Text('Save', style: TextStyle(color: Colors.white)),
+                ),const SizedBox(
+                    height: kmediumspace
+                ),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: AppColor.burntgreen,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Following(0)",
+                  style: GoogleFonts.ubuntu(
+                    color: AppColor.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(
+                  height: kmediumspace * 2,
+                ),
+                Center(
+                  child: Text(
+                    "Follow Your Friends",
+                    style: GoogleFonts.ubuntu(
+                        color: AppColor.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),
+                const SizedBox(
+                  height: kmediumspace * 2,
+                )
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: kspace),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Followers(0)",
+                style: GoogleFonts.ubuntu(
+                  color: AppColor.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 17,
                 ),
               ),
-            ),
-
-          ],),
-        )
-
+              const SizedBox(
+                height: kmediumspace * 2,
+              ),
+              Center(
+                child: Text(
+                  "Share your Links to friends",
+                  style: GoogleFonts.ubuntu(
+                      color: AppColor.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
+            ],
+          ),
+        ),
       ]),
     );
   }
