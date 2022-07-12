@@ -34,7 +34,7 @@ class _LyricsPageState extends State<LyricsPage>
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainBackgroundColor,
+      backgroundColor: mainBackgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(children: [

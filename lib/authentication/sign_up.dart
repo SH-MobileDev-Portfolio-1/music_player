@@ -14,7 +14,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: SignInColor,
+        backgroundColor: signInColor,
         body: SingleChildScrollView(
           child: Center(
             child: Column(
@@ -23,13 +23,13 @@ class _SignUpState extends State<SignUp> {
                 CircleAvatar(
                   radius: 35,
                   child: Image.asset('logo.png'),
-                  backgroundColor: BackButtonColor,
+                  backgroundColor: backButtonColor,
                 ),
                 SizedBox(height: 30),
                 Container(
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
-                    color: HighlightColor,
+                    color: highlightColor,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
@@ -97,7 +97,7 @@ class _SignUpState extends State<SignUp> {
                       Center(
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: SignUpColor,
+                            primary: signUpColor,
                             minimumSize: const Size.fromHeight(60),
                             elevation: 0,
                           ),
@@ -113,7 +113,7 @@ class _SignUpState extends State<SignUp> {
                         child: ElevatedButton.icon(
                           icon: const Icon(Icons.g_mobiledata_sharp),
                           style: ElevatedButton.styleFrom(
-                            primary: HighlightColor,
+                            primary: highlightColor,
                             minimumSize: const Size.fromHeight(60),
                             side: BorderSide(width: 1, color: Colors.white70),
                             elevation: 2,
@@ -153,7 +153,7 @@ class _SignUpState extends State<SignUp> {
           TextSpan(
               text: ' Sign In',
               style: TextStyle(
-                color: BackButtonColor,
+                color: backButtonColor,
                 fontSize: 15,
               ))
         ]),

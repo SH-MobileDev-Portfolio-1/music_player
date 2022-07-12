@@ -61,7 +61,7 @@ class _QueuePageState extends State<QueuePage>
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainBackgroundColor,
+      backgroundColor: mainBackgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(
