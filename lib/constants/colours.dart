@@ -21,11 +21,11 @@ class AppColor {
   static const mintsgreen = Color(0xFF3AE8E8);
 }
 
-// musti's colours
 const darkGreenArrow = Color(0xFF275151);
 const lightGreenContainer = Color(0xFF3AE8E8);
 const imageHighlight = Color.fromARGB(255, 6, 94, 99);
 const playlistImageBorder = Color(0xFFB3B3B3);
+const lightMint = Color(0xff65A2A1);
 
 class Colours {
   Colours._();

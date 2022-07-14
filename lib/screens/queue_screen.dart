@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+//import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +13,7 @@ class QueuePage extends StatefulWidget {
 
 class _QueuePageState extends State<QueuePage>
     with SingleTickerProviderStateMixin {
-  final audioPlayer = AudioPlayer();
+  // final audioPlayer = AudioPlayer();
   bool isPlaying = true;
   bool isLyricAvailable = true;
   Duration duration = Duration.zero;
@@ -88,7 +88,7 @@ class _QueuePageState extends State<QueuePage>
                       ),
                     ),
                   ),
-                  SizedBox(width:10.0),
+                  SizedBox(width: 10.0),
                   Text(
                     "Now Playing",
                     style: GoogleFonts.ubuntu(
