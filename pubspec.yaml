@@ -40,7 +40,9 @@ dependencies:
   flutter_switch: ^0.3.2
   flutter_svg: ^1.1.0
   audioplayers: ^0.20.1
-
+  shared_preferences: ^2.0.15
+  smooth_page_indicator: ^1.0.0+2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
