@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/constants/widget.dart';
 import 'package:music_player/authentication/sign_up.dart';
 import 'package:music_player/screens/lyrics_screen.dart';
 import 'package:music_player/screens/queue_screen.dart';
@@ -28,17 +29,20 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image:
-                NetworkImage("https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        decoration: getDecoration(),
+//        decoration: BoxDecoration(
+//          image: DecorationImage(
+//           image:
+//                NetworkImage("https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
+//            fit: BoxFit.cover,
+//          ),
+//        ),
         child: Center(
           child: GestureDetector(
             // onTap: () => Navigator.of(context).pushReplacement(
             //     MaterialPageRoute(builder: (context) => const onBoarding())),
+            onTap: () => Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const onBoarding())),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
