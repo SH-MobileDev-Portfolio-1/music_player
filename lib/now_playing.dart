@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+//import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:music_player/constants/colours.dart';
@@ -11,7 +11,7 @@ class Playing extends StatefulWidget {
 }
 
 class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
-  final audioPlayer = AudioPlayer();
+  //final audioPlayer = AudioPlayer();
   bool isPlaying = true;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -32,7 +32,8 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
-@override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       /*appBar: AppBar(
@@ -51,7 +52,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           ),
         ),
       ),*/
-      backgroundColor: mainBackgroundColor,
+      backgroundColor: MainBackgroundColor,
       body: Center(
         child: Column(children: [
           const SizedBox(height: 10),
@@ -59,7 +60,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
             children: [
               const SizedBox(width: 10),
               CircleAvatar(
-                backgroundColor: backButtonColor,
+                backgroundColor: BackButtonColor,
                 radius: 20,
                 child: IconButton(
                   splashRadius: 5,
@@ -74,7 +75,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           ),
           CircleAvatar(
             radius: 100,
-            backgroundColor: circleColor,
+            backgroundColor: CircleColor,
             child: ClipOval(
                 child: Image.asset(
               'Sarada.png',
@@ -96,7 +97,7 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           const SizedBox(height: 10),
           const Text(
             "Davido Ft. Sunday Service Choir",
-            style:  TextStyle(
+            style: TextStyle(
               color: Colors.white70,
               fontSize: 15,
               fontStyle: FontStyle.normal,
@@ -121,8 +122,8 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-                SizedBox(width: 5),
-                Text(
+              SizedBox(width: 5),
+              Text(
                 'Favourites',
                 style: TextStyle(
                   fontSize: 10,

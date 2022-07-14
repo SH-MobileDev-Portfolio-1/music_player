@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 const MainBackgroundColor = const Color(0xff1c7068);
-const CircleColor = const Color(0xff3a6464);
+const CircleColor = Color(0xff3a6464);
 const BackButtonColor = const Color(0xff3cecf0);
 const SignUpColor = const Color(0xff245c6c);
 const SignInColor = const Color(0xff285c64);
@@ -24,3 +24,5 @@ class AppColor {
 const darkGreenArrow = Color(0xFF275151);
 const lightGreenContainer = Color(0xFF3AE8E8);
 const imageHighlight = Color.fromARGB(255, 6, 94, 99);
+
+const lightMint = Color(0xff65A2A1);
