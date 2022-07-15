@@ -33,7 +33,7 @@ class _RecentSearchState extends State<RecentSearch> {
                   child: Center(
                     child: IconButton(
                       icon: const Icon(Icons.arrow_back),
-                      onPressed: () {},
+                      onPressed: () {Navigator.pop(context);},
                     ),
                   )),
             ),

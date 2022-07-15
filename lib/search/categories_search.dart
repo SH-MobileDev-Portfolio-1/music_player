@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:music_player/constants/size.dart';
 import 'package:music_player/models/categories_model.dart';
+import 'package:music_player/search/recent_search.dart';
 import 'package:music_player/widgets/categories_tile.dart';
 
 class CategoriesSearch extends StatefulWidget {
@@ -21,7 +22,7 @@ class _CategoriesSearchState extends State<CategoriesSearch> {
         padding: const EdgeInsets.symmetric(horizontal: kmediumspace),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const SizedBox(
-            height: kmediumspace*2,
+            height: kmediumspace * 2,
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -32,20 +33,26 @@ class _CategoriesSearchState extends State<CategoriesSearch> {
                     color: AppColor.lightgreen, shape: BoxShape.circle),
                 child: IconButton(
                   icon: const Icon(Icons.arrow_back),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 )),
           ),
-          const SizedBox(
-            height: kmediumspace
+          const SizedBox(height: kmediumspace),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RecentSearch()));
+            },
+            child: Text(
+              "Search",
+              style: GoogleFonts.ubuntu(
+                  color: AppColor.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
-          Text(
-            "Search",
-            style: GoogleFonts.ubuntu(
-                color: AppColor.white, fontSize: 15, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(
-            height: kspace
-          ),
+          const SizedBox(height: kspace),
           Container(
             height: 40,
             decoration: BoxDecoration(
@@ -87,4 +94,3 @@ class _CategoriesSearchState extends State<CategoriesSearch> {
     );
   }
 }
-

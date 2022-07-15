@@ -60,7 +60,7 @@ class _FavouriteState extends State<Favourite> {
               //Image.asset('logo.png'),
               const Text(
                 "Listen to your favourite Artist",
-                style:  TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
@@ -77,7 +77,7 @@ class _FavouriteState extends State<Favourite> {
               ),
               const Text(
                 "as possible",
-                style:  TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                   color: Colors.white,
@@ -85,7 +85,7 @@ class _FavouriteState extends State<Favourite> {
               ),
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
-                 CircleAvatar(
+                CircleAvatar(
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(width: 130),
@@ -137,7 +137,7 @@ class _FavouriteState extends State<Favourite> {
                 ),
                 child: const Text(
                   "Continue",
-                  style:  TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
