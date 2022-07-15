@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,9 +19,7 @@ class _HomeTabState extends State<HomeTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        children: const [
-          explore()
-        ],
+        children: const [Explore()],
         onPageChanged: onPageClicked,
         controller: pageController,
       ),
@@ -30,7 +27,8 @@ class _HomeTabState extends State<HomeTab> {
         height: 87,
         child: CupertinoTabBar(
           currentIndex: initialPage,
-          backgroundColor: Colours.tealgreen.withOpacity(0.1), //Color(0xff244BA9),
+          backgroundColor:
+              Colours.tealgreen.withOpacity(0.1), //Color(0xff244BA9),
           // Color(0xff162850),
 
           onTap: onClicked,
@@ -101,8 +99,8 @@ class _HomeTabState extends State<HomeTab> {
             ),
             BottomNavigationBarItem(
               icon:
-              // Image.asset('name'),
-              Column(
+                  // Image.asset('name'),
+                  Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset('assets/icons/img_3.png'),
@@ -124,8 +122,8 @@ class _HomeTabState extends State<HomeTab> {
             ),
             BottomNavigationBarItem(
               icon:
-              // Image.asset('name'),
-              Column(
+                  // Image.asset('name'),
+                  Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset('assets/icons/img_4.png'),

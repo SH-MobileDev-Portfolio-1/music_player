@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_player/now_playing.dart';
+import 'package:music_player/screens/create_new_playlist.dart';
+import 'package:music_player/screens/explore.dart';
+import 'package:music_player/screens/library.dart';
+import 'package:music_player/settings.dart';
 
 import '../constants/colours.dart';
-import '../profile/create_playlist.dart';
+import '../profile/profile_page_new.dart';
 import '../profile/edit_profile.dart';
 import 'home_screen.dart';
 
@@ -17,10 +22,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
   final pages = const [
     HomeScreen(),
-    CreatePlaylist(),
-    EditProfile(),
-    HomeScreen(),
-    EditProfile(),
+    Explore(),
+    CreateNewPlaylist(),
+    Library(),
+    Settings(),
   ];
 
   @override
@@ -30,94 +35,102 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: Stack(
         children: [
           pages[currentIndex],
-          Positioned(
-            //top: screenHeight / 1.5,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              //  width: screenWidth,
-              height: 90,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 15,
-              ),
-              decoration: BoxDecoration(
-                  color: lightMint.withOpacity(0.95),
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    topLeft: Radius.circular(30),
-                  )),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset('assets/images/nowPlaying.png'),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Now Playing',
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: AppColor.white,
+          currentIndex != 4
+              ? Positioned(
+                  //top: screenHeight / 1.5,
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Playing()));
+                    },
+                    child: Container(
+                      //  width: screenWidth,
+                      height: 90,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 15,
+                      ),
+                      decoration: BoxDecoration(
+                          color: lightMint.withOpacity(0.95),
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(30),
+                          )),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset('assets/images/nowPlaying.png'),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Now Playing',
+                                  style: GoogleFonts.ubuntu(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColor.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Stand Strong',
+                                  style: GoogleFonts.ubuntu(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColor.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Davido Ft. Sunday Service Choir',
+                                  style: GoogleFonts.ubuntu(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColor.white,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        Text(
-                          'Stand Strong',
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                            color: AppColor.white,
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  //audioplay
+                                },
+                                padding: EdgeInsets.zero,
+                                iconSize: 20,
+                                color: AppColor.white,
+                                tooltip: 'Pause',
+                                alignment: Alignment.centerRight,
+                                icon: const Icon(
+                                  Icons.pause,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  //audioplay
+                                },
+                                tooltip: 'Close',
+                                alignment: Alignment.center,
+                                iconSize: 20,
+                                color: AppColor.white,
+                                icon: const Icon(
+                                  Icons.close,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          'Davido Ft. Sunday Service Choir',
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: AppColor.white,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          //audioplay
-                        },
-                        padding: EdgeInsets.zero,
-                        iconSize: 20,
-                        color: AppColor.white,
-                        tooltip: 'Pause',
-                        alignment: Alignment.centerRight,
-                        icon: const Icon(
-                          Icons.pause,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          //audioplay
-                        },
-                        tooltip: 'Close',
-                        alignment: Alignment.center,
-                        iconSize: 20,
-                        color: AppColor.white,
-                        icon: const Icon(
-                          Icons.close,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
+                )
+              : Container(),
         ],
       ),
       bottomNavigationBar: Container(

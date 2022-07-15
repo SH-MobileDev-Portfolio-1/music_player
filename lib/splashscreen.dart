@@ -17,7 +17,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     Future.delayed(
         const Duration(seconds: 3),
         () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const QueuePage())));
+            .push(MaterialPageRoute(builder: (context) => const SignIn())));
   }
 
   @override
@@ -41,8 +41,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
           child: GestureDetector(
             // onTap: () => Navigator.of(context).pushReplacement(
             //     MaterialPageRoute(builder: (context) => const onBoarding())),
-            onTap: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const onBoarding())),
+            // onTap: () => Navigator.of(context).pushReplacement(
+            //     MaterialPageRoute(builder: (context) => const onBoarding())),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,

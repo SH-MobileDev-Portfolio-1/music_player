@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:music_player/constants/size.dart';
+import 'package:music_player/profile/profile_page.dart';
+import 'package:music_player/profile/profile_page_new.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class _EditProfileState extends State<EditProfile> {
                           color: AppColor.lightgreen, shape: BoxShape.circle),
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back),
-                        onPressed: () {},
+                        onPressed: () { 
+              Navigator.pop(context);
+            },
                       ),
                     ),
                     SvgPicture.asset(
@@ -237,7 +241,10 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                     ),
                   ),
-                  onPressed: (){},
+                  onPressed: (){ 
+              Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ProfilePageNew()));
+            },
                   child: const Text('Save', style: TextStyle(color: Colors.white)),
                 ),
               ),

@@ -35,187 +35,195 @@ class _PlayingState extends State<Playing> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      /*appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: CircleAvatar(
-          backgroundColor: BackButtonColor,
-          radius: 10,
-          child: IconButton(
-            splashRadius: 5,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            color: Colors.black,
-            icon: Icon(Icons.arrow_back_sharp),
-            onPressed: () {},
-          ),
-        ),
-      ),*/
-      backgroundColor: MainBackgroundColor,
-      body: Center(
-        child: Column(children: [
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              const SizedBox(width: 10),
-              CircleAvatar(
-                backgroundColor: BackButtonColor,
-                radius: 20,
-                child: IconButton(
-                  splashRadius: 5,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  color: Colors.black,
-                  icon: const Icon(Icons.arrow_back_sharp),
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          ),
-          CircleAvatar(
-            radius: 100,
-            backgroundColor: CircleColor,
-            child: ClipOval(
-                child: Image.asset(
-              'Sarada.png',
-              width: 170,
-              height: 170,
-              fit: BoxFit.cover,
-            )),
-          ),
-          const SizedBox(height: 15),
-          const Text(
-            "Stand Strong",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w500,
+    return SafeArea(
+      child: Scaffold(
+        /*appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          leading: CircleAvatar(
+            backgroundColor: BackButtonColor,
+            radius: 10,
+            child: IconButton(
+              splashRadius: 5,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              color: Colors.black,
+              icon: Icon(Icons.arrow_back_sharp),
+              onPressed: () {},
             ),
           ),
-          const SizedBox(height: 10),
-          const Text(
-            "Davido Ft. Sunday Service Choir",
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 15,
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w100,
-            ),
-          ),
-          const SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: const Icon(CupertinoIcons.heart),
-                color: Colors.white,
-                onPressed: () {},
-              ),
-              const SizedBox(width: 50),
-              const Icon(Icons.repeat, color: Colors.white),
-              const SizedBox(width: 50),
-              const Icon(Icons.shuffle, color: Colors.white)
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SizedBox(width: 5),
-              Text(
-                'Favourites',
-                style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w100,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(width: 50),
-              Text(
-                'Repeat',
-                style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w100,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(width: 45),
-              Text(
-                'Shuffle',
-                style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w100,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(width: 5)
-            ],
-          ),
-          const SizedBox(height: 30),
-          SliderTheme(
-              data: const SliderThemeData(
-                  thumbColor: Colors.lightBlueAccent,
-                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7)),
-              child: Slider(
-                min: 0,
-                max: duration.inSeconds.toDouble(),
-                value: position.inSeconds.toDouble(),
-                onChanged: (value) async {},
-              )),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        ),*/
+        backgroundColor: mainBackgroundColor,
+        body: Center(
+          child: Column(children: [
+            const SizedBox(height: 10),
+            Row(
               children: [
-                Text(
-                  formatTime(position),
-                  style: const TextStyle(
-                    fontSize: 15,
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w100,
-                  ),
-                ),
-                Text(
-                  formatTime(duration - position),
-                  style: const TextStyle(
-                    fontSize: 15,
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w100,
+                const SizedBox(width: 10),
+                CircleAvatar(
+                  backgroundColor: backButtonColor,
+                  radius: 20,
+                  child: IconButton(
+                    splashRadius: 5,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    color: Colors.black,
+                    icon: const Icon(Icons.arrow_back_sharp),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.fast_rewind_sharp),
-                iconSize: 70,
+            CircleAvatar(
+              radius: 100,
+              backgroundColor: circleColor,
+              child: ClipOval(
+                  child: Image.asset(
+                'Sarada.png',
+                width: 170,
+                height: 170,
+                fit: BoxFit.cover,
+              )),
+            ),
+            const SizedBox(height: 15),
+            const Text(
+              "Stand Strong",
+              style: TextStyle(
                 color: Colors.white,
+                fontSize: 20,
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w500,
               ),
-              IconButton(
-                iconSize: 70,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                icon: AnimatedIcon(
-                  icon: AnimatedIcons.pause_play,
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Davido Ft. Sunday Service Choir",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 15,
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w100,
+              ),
+            ),
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: const Icon(CupertinoIcons.heart),
                   color: Colors.white,
-                  progress: controller,
+                  onPressed: () {},
                 ),
-                onPressed: toggleIcon,
+                const SizedBox(width: 50),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.repeat, color: Colors.white)),
+                const SizedBox(width: 50),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.shuffle, color: Colors.white))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(width: 5),
+                Text(
+                  'Favourites',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white70,
+                  ),
+                ),
+                SizedBox(width: 50),
+                Text(
+                  'Repeat',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white70,
+                  ),
+                ),
+                SizedBox(width: 45),
+                Text(
+                  'Shuffle',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white70,
+                  ),
+                ),
+                SizedBox(width: 5)
+              ],
+            ),
+            const SizedBox(height: 30),
+            SliderTheme(
+                data: const SliderThemeData(
+                    thumbColor: Colors.lightBlueAccent,
+                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7)),
+                child: Slider(
+                  min: 0,
+                  max: duration.inSeconds.toDouble(),
+                  value: position.inSeconds.toDouble(),
+                  onChanged: (value) async {},
+                )),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    formatTime(position),
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
+                  Text(
+                    formatTime(duration - position),
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
+                ],
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.fast_forward_sharp),
-                iconSize: 70,
-                color: Colors.white,
-              ),
-            ],
-          ),
-        ]),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.fast_rewind_sharp),
+                  iconSize: 70,
+                  color: Colors.white,
+                ),
+                IconButton(
+                  iconSize: 70,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  icon: AnimatedIcon(
+                    icon: AnimatedIcons.pause_play,
+                    color: Colors.white,
+                    progress: controller,
+                  ),
+                  onPressed: toggleIcon,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.fast_forward_sharp),
+                  iconSize: 70,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ]),
+        ),
       ),
     );
   }
