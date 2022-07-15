@@ -27,7 +27,7 @@ class _FavouriteState extends State<Favourite> {
             ),
           ),
         ),*/
-        backgroundColor: MainBackgroundColor,
+        backgroundColor: mainBackgroundColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -37,7 +37,7 @@ class _FavouriteState extends State<Favourite> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleAvatar(
-                    backgroundColor: BackButtonColor,
+                    backgroundColor: backButtonColor,
                     radius: 20,
                     child: IconButton(
                       splashRadius: 5,
@@ -50,7 +50,7 @@ class _FavouriteState extends State<Favourite> {
                   ),
                   CircleAvatar(
                     radius: 35,
-                    backgroundColor: BackButtonColor,
+                    backgroundColor: backButtonColor,
                     child: Image.asset('logo.png'),
                   ),
                   const SizedBox(width: 40)
@@ -133,7 +133,7 @@ class _FavouriteState extends State<Favourite> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(230, 50),
-                  primary: BackButtonColor,
+                  primary: backButtonColor,
                 ),
                 child: const Text(
                   "Continue",

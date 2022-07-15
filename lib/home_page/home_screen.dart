@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
+import 'package:music_player/profile/profile_page.dart';
+import 'package:music_player/profile/profile_page_new.dart';
+import 'package:music_player/search/categories_search.dart';
 
 import 'main_home.dart';
 
@@ -31,6 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: GestureDetector(
             onTap: () {
               ///TO profile screen
+              
+              Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProfilePageNew()));
+            
             },
             child: Row(
               children: [
@@ -56,6 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
           GestureDetector(
             onTap: () {
               ///TO search screen
+              Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CategoriesSearch()));
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),

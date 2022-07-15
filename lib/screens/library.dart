@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
+import 'package:music_player/search/categories_search.dart';
 import 'package:music_player/widgets/recently_played_tile.dart';
 
 class Library extends StatefulWidget {
@@ -68,7 +69,12 @@ class _LibraryState extends State<Library> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CategoriesSearch()));
+                      },
                       icon: Icon(
                         Icons.search,
                         color: AppColor.lightgreen,
@@ -77,15 +83,150 @@ class _LibraryState extends State<Library> {
                     const SizedBox(width: 10),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Local Music',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Local Music',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(
+                  color: playlistImageBorder,
+                  thickness: 1.2,
+                ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Playlist',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(
+                  color: playlistImageBorder,
+                  thickness: 1.2,
+                ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Artist',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(
+                  color: playlistImageBorder,
+                  thickness: 1.2,
+                ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Album',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(
+                  color: playlistImageBorder,
+                  thickness: 1.2,
+                ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Favourite',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(
+                  color: playlistImageBorder,
+                  thickness: 1.2,
+                ),
+                InkWell(
+                  onTap: () {
+                    //  Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => ));
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 12.0),
+                        child: Text(
+                          'Downloads',
+                          style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const Divider(
@@ -93,82 +234,8 @@ class _LibraryState extends State<Library> {
                   thickness: 1.2,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Playlist',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: playlistImageBorder,
-                  thickness: 1.2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Artist',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: playlistImageBorder,
-                  thickness: 1.2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Album',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: playlistImageBorder,
-                  thickness: 1.2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Favourite',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: playlistImageBorder,
-                  thickness: 1.2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 12.0),
-                  child: Text(
-                    'Downloads',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: playlistImageBorder,
-                  thickness: 1.2,
-                ),
-                Padding(
-                      padding: const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 12.0),
+                  padding:
+                      const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 12.0),
                   child: Text(
                     'Recently Played',
                     style: GoogleFonts.ubuntu(

@@ -3,6 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:music_player/constants/size.dart';
+import 'package:music_player/home_page/bottom_nav_bar.dart';
+import 'package:music_player/home_page/home_screen.dart';
+import 'package:music_player/profile/edit_profile.dart';
 
 import '../widgets/profile_tile.dart';
 
@@ -19,11 +22,12 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: AppColor.burntgreen,
       body: ListView(children: [
-        Card(color: AppColor.burntgreen,
+        Card(
+          color: AppColor.burntgreen,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kmediumspace,vertical: kmediumspace - 5),
-            child:
-            Column(
+            padding: const EdgeInsets.symmetric(
+                horizontal: kmediumspace, vertical: kmediumspace - 5),
+            child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,21 +39,34 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: AppColor.lightgreen, shape: BoxShape.circle),
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BottomNavBar()));
+                        },
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: kmediumspace * 5),
-                      child: SvgPicture.asset(
-                        "assets/icons/edit.svg",
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EditProfile()));
+                        },
+                        child: SvgPicture.asset(
+                          "assets/icons/edit.svg",
+                        ),
                       ),
                     ),
                     SvgPicture.asset(
                       "assets/icons/share.svg",
                     ),
-
                   ],
-                ), const SizedBox(
+                ),
+                const SizedBox(
                   height: ksmallspace,
                 ),
                 Row(
@@ -57,10 +74,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     const CircleAvatar(
                       radius: 40,
                       backgroundImage:
-                      AssetImage("assets/images/profile_picture.png"),
+                          AssetImage("assets/images/profile_picture.png"),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: kmediumspace *3,),
+                      padding: const EdgeInsets.only(
+                        top: kmediumspace * 3,
+                      ),
                       child: SvgPicture.asset("assets/icons/edits.svg"),
                     ),
                     Column(
@@ -76,8 +95,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: <TextSpan>[
                               TextSpan(
                                 text: ' Muiz',
-                                style: GoogleFonts.ubuntu(fontWeight: FontWeight.w400,
-                                    color: AppColor.white, fontSize: 14),
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColor.white,
+                                    fontSize: 14),
                               ),
                             ],
                           ),
@@ -93,7 +114,8 @@ class _ProfilePageState extends State<ProfilePage> {
                               TextSpan(
                                 text: '  122695769',
                                 style: GoogleFonts.ubuntu(
-                                  color: AppColor.white,fontWeight: FontWeight.w400,
+                                  color: AppColor.white,
+                                  fontWeight: FontWeight.w400,
                                   fontSize: 14,
                                 ),
                               ),
@@ -110,29 +132,27 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: <TextSpan>[
                               TextSpan(
                                 text:
-                                ' I am Muiz, a music lover\n           and I have passion for new\n           artists',
+                                    ' I am Muiz, a music lover\n           and I have passion for new\n           artists',
                                 style: GoogleFonts.ubuntu(
-                                  color: AppColor.white,fontWeight: FontWeight.w400,
+                                  color: AppColor.white,
+                                  fontWeight: FontWeight.w400,
                                   fontSize: 14,
                                 ),
                               ),
                             ],
                           ),
                         ),
-
                       ],
                     ),
                   ],
                 ),
               ],
             ),
-
           ),
         ),
-        const SizedBox(
-          height: kmediumspace
-        ),
-        Card(color: AppColor.burntgreen,
+        const SizedBox(height: kmediumspace),
+        Card(
+          color: AppColor.burntgreen,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kmediumspace - 5),
             child: Column(
@@ -164,9 +184,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             image: "assets/images/all.png",
                             name: "B3atz all in one mix"),
                         ProfileTile(
-                            image: "assets/images/tall.png", name: "Best of Burnaboy"),
+                            image: "assets/images/tall.png",
+                            name: "Best of Burnaboy"),
                         ProfileTile(
-                            image: "assets/images/wizkid.png", name: "Best of Wizkid"),
+                            image: "assets/images/wizkid.png",
+                            name: "Best of Wizkid"),
                       ],
                     )),
                 const SizedBox(
@@ -197,32 +219,36 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Row(
                       children: const [
                         ProfileTile(
-                            image: "assets/images/artiste3.png", name: "Burna Boy"),
+                            image: "assets/images/artiste3.png",
+                            name: "Burna Boy"),
                         ProfileTile(
-                            image: "assets/images/psquare.png", name: "Rudeboy"),
+                            image: "assets/images/psquare.png",
+                            name: "Rudeboy"),
                         ProfileTile(
-                            image: "assets/images/rihanna.png", name: "Nicki Minaj"),
-                        ProfileTile(image: "assets/images/simi.png", name: "Simi"),
+                            image: "assets/images/rihanna.png",
+                            name: "Nicki Minaj"),
+                        ProfileTile(
+                            image: "assets/images/simi.png", name: "Simi"),
                       ],
                     )),
                 const SizedBox(height: kspace),
                 Center(
                     child: Text(
-                      "Follow More",
-                      style: GoogleFonts.ubuntu(
-                        color: AppColor.white,fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ),
-                    )), const SizedBox(height: kspace),
+                  "Follow More",
+                  style: GoogleFonts.ubuntu(
+                    color: AppColor.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                )),
+                const SizedBox(height: kspace),
               ],
             ),
           ),
         ),
-
-
         const SizedBox(height: kspace),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kmediumspace -5 ),
+          padding: const EdgeInsets.symmetric(horizontal: kmediumspace - 5),
           child: Column(
             children: [
               Row(
@@ -244,7 +270,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ],
-              ),SingleChildScrollView(
+              ),
+              SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: const [
@@ -254,18 +281,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       ProfileTile(
                         image: "assets/images/gospel.png",
                       ),
-                      ProfileTile(
-                          image: "assets/images/man.png"),
-                      ProfileTile(
-                          image: "assets/images/hajia.png"),
+                      ProfileTile(image: "assets/images/man.png"),
+                      ProfileTile(image: "assets/images/hajia.png"),
                     ],
                   ))
             ],
           ),
         ),
-
       ]),
     );
   }
 }
-

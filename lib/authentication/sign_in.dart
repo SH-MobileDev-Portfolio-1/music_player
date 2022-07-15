@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/authentication/sign_up.dart';
 import 'package:music_player/constants/colours.dart';
+import 'package:music_player/home_page/bottom_nav_bar.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -81,7 +82,10 @@ class _SignInState extends State<SignIn> {
                             'Sign In',
                             style: TextStyle(fontSize: 20, color: Colors.white),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                             Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => BottomNavBar()));
+                          },
                         ),
                       ),
                       SizedBox(height: 15),

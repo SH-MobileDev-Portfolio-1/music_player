@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/authentication/onboarding.dart';
-import 'package:music_player/profile/create_playlist.dart';
+import 'package:music_player/profile/profile_page_new.dart';
 import 'package:music_player/profile/edit_profile.dart';
 import 'package:music_player/profile/profile_page.dart';
 import 'package:music_player/screens/create_new_playlist.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       title: 'B3atz',
-      home: BottomNavBar(), //SplashScreenPage()
+      home: SplashScreenPage()//BottomNavBar(), //SplashScreenPage()
 //      home: onBoarding());
     );
   }
