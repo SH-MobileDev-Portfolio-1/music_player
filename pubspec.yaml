@@ -41,7 +41,6 @@ dependencies:
   flutter_svg: ^1.1.0
   audioplayers: ^0.20.1
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,7 +68,6 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
-  #  - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

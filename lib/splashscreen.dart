@@ -38,7 +38,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         child: Center(
           child: GestureDetector(
             onTap: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const onBoarding())),
+                MaterialPageRoute(builder: (context) => const SignIn())),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
