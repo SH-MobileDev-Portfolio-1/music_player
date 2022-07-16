@@ -61,7 +61,7 @@ BoxDecoration getDecoration(){
     image: DecorationImage(
       image: NetworkImage(
           "https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
-      fit: BoxFit.cover,
+      fit: BoxFit.fill,
     ),
   );
 }
