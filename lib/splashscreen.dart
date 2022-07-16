@@ -21,25 +21,27 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     decideNavigation();
   }
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-                "https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+              "https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
+          fit: BoxFit.cover,
         ),
-        child: Center(
-          child: GestureDetector(
-            onTap: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const onBoarding())),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset ('assets/images/logo.png',width: 222, height: 222,),
-              ],
+      ),
+      child: Scaffold(
+        body: Container(
+          child: Center(
+            child: GestureDetector(
+              onTap: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const onBoarding())),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset ('assets/images/logo.png',width: 222, height: 222,),
+                ],
+              ),
             ),
           ),
         ),
