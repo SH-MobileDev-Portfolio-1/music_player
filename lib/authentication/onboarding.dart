@@ -26,45 +26,47 @@ class _onBoardingState extends State<onBoarding> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: getDecoration(),
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget> [
-    Container(
-    height: 650.0,
-    child: PageView(
-    physics: ClampingScrollPhysics(),
-    controller: _pageController,
-    onPageChanged: (int page) {
-    setState(() {
-    _currentPage = page;
-    });
-    },
-      children: <Widget>[
-        getField('Feel Relaxed',
-            "Music is a form of art that can be used to express a message. It can also be used to relax the mind, body and soul."),
+    return SingleChildScrollView(
+      child: Scaffold(
+        body: Container(
+          decoration: getDecoration(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget> [
+      Container(
+      height: 650.0,
+      child: PageView(
+      physics: ClampingScrollPhysics(),
+      controller: _pageController,
+      onPageChanged: (int page) {
+      setState(() {
+      _currentPage = page;
+      });
+      },
+        children: <Widget>[
+          getField('Feel Relaxed',
+              "Music is a form of art that can be used to express a message. It can also be used to relax the mind, body and soul."),
 
-        getField('Be Fulfilled',
-            "Music is a powerful tool for relaxation. It can help you unwind, drift away from the stresses of daily life and find yourself in a state of peace."),
-      ],
-    ),
-    ),
-              SizedBox(height: 47),
-              Row(
-                children: [
-                  getButton(_pageController),
-                  SizedBox(width: 240),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: _buildPageIndicator(),
-              ),
-            ],
+          getField('Be Fulfilled',
+              "Music is a powerful tool for relaxation. It can help you unwind, drift away from the stresses of daily life and find yourself in a state of peace."),
+        ],
+      ),
+      ),
+                SizedBox(height: 47),
+                Row(
+                  children: [
+                    getButton(_pageController),
+                    SizedBox(width: 240),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _buildPageIndicator(),
+                ),
+              ],
+            ),
           ),
         ),
       ),

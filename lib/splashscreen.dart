@@ -23,7 +23,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: getDecoration(),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+                "https://i.ibb.co/WtBJ2vc/Splashbackground.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Center(
           child: GestureDetector(
             onTap: () => Navigator.of(context).pushReplacement(
