@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_player/screens/tabs.dart';
 import 'package:music_player/constants/colours.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'exploreBar/Tracks.dart';
+import 'exploreBar/Album.dart';
+import 'exploreBar/Artiste.dart';
+import 'exploreBar/Genre.dart';
 class explore extends StatefulWidget {
   const explore({Key? key}) : super(key: key);
 
@@ -22,9 +26,12 @@ class _exploreState extends State<explore> {
               SliverAppBar(
                 backgroundColor: Colours.maingreen,
                 expandedHeight: 129,
-                leading:  Text(
-                    "Lets Explore" ,
-                  style: GoogleFonts.ubuntu(textStyle: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w700)),
+                leading:  Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Text(
+                      'Lets Explore' ,
+                    style: GoogleFonts.ubuntu(textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: Colours.offWhite)),
+                  ),
                 ),
                 actions: [
                   GestureDetector(
@@ -40,39 +47,40 @@ class _exploreState extends State<explore> {
                     Tab(
                         child: Text(
                             "Tracks",
-                            style:  GoogleFonts.montserrat(textStyle: const TextStyle(color: Colors.black, fontSize: 20),)
+                            style:  GoogleFonts.ubuntu(textStyle: const TextStyle(color: Colors.white, fontSize: 20),)
                         )
                     ),
                     Tab(
                         child: Text(
                             "Albums",
-                            style: GoogleFonts.montserrat(textStyle: const TextStyle(color: Colors.black, fontSize: 20),)
+                            style: GoogleFonts.ubuntu(textStyle: const TextStyle(color: Colors.white, fontSize: 20),)
                         )
                     ),
                     Tab(
                         child: Text(
                             "Artists",
-                            style: GoogleFonts.montserrat(textStyle: const TextStyle(color: Colors.black, fontSize: 20),)
+                            style: GoogleFonts.ubuntu(textStyle: const TextStyle(color: Colors.white, fontSize: 20),)
                         )
                     ),
                     Tab(
                         child: Text(
                             "Genre",
-                            style: GoogleFonts.montserrat(textStyle: const TextStyle(color: Colors.black, fontSize: 20),)
+                            style: GoogleFonts.ubuntu(textStyle: const TextStyle(color: Colors.white, fontSize: 20),)
                         )
                     ),
 
                   ],
                 ),
-
               ), ];
           }, body: const TabBarView(
           children: [
-
+            tracks(),
+            album(),
+            artiste(),
+            genre(),
           ],
         ),
         ),
-
       ),
     );
   }
