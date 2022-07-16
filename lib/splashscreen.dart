@@ -30,6 +30,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         ),
       ),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Container(
           child: Center(
             child: GestureDetector(
